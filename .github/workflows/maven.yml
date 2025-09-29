@@ -24,7 +24,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Eunning Test Automation Framework with Maven
+    - name: Running Test Automation Framework with Maven
       run: mvn test -x -Dbrowser=browser -DisLambdaTest=true -DisHeadLess=false
 
     - name : Upload Test logs
