@@ -3,7 +3,7 @@ name: Test Automation WorkFlow
 on:
   schedule:
   - cron: 00 18 * * * 
-  push:
+  push: 
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
