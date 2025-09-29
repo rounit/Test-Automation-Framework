@@ -23,9 +23,16 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Verify testData folder
+      run: |
+        ls -l testData
+        if [ ! -f testData/loginData.csv ]; then
+          echo "ERROR: loginData.csv not found!"
+          exit 1
+        fi    
         
     - name: Running Test Automation Framework with Maven
-      run: mvn test -X -Dbrowser=browser -DisLambdaTest=true -DisHeadLess=false
+      run: mvn test -X -Dbrowser=CHROME -DisLambdaTest=true -DisHeadLess=false
 
     - name : Upload Test logs
       if : always()
